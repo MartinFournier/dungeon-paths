@@ -1,5 +1,6 @@
 package com.dungeonpaths;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -12,7 +13,7 @@ public class LaunchActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+       // this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.launch_main);
     }
 
@@ -30,8 +31,8 @@ public class LaunchActivity extends Activity {
         EditText text = (EditText) findViewById(R.id.hero_name);
         Global.hero.name = text.getText().toString();
         Global.hero.level = 0;
-//        Intent intent = new Intent(this, MainDungeonActivity.class);
-//        intent.putExtra("TEMPTEST", "Hello");
-//        startActivity(intent);
+        Intent intent = new Intent(this, DungeonActivity.class);
+        intent.putExtra("TEMPTEST", "Hello");
+        startActivity(intent);
     }
 }
