@@ -28,12 +28,12 @@ public class LaunchActivity extends Activity {
 
 
     public void createHero(View view) {
-        Global.hero = new Hero();
         EditText text = (EditText) findViewById(R.id.hero_name);
-        Global.hero.name = text.getText().toString();
-        Global.hero.level = 0;
+        String heroName = text.getText().toString();
+        Hero hero = new Hero(heroName);
+        Global.setHero(hero);
         Intent intent = new Intent(this, DungeonActivity.class);
-        intent.putExtra("TEMPTEST", "Hello");
+
         startActivity(intent);
     }
 }

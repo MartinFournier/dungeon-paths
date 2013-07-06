@@ -7,5 +7,6 @@
     <string name="btn_hero">Create Hero</string>
     <string name="title_activity_dungeon">DungeonActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_winning">WinningActivity</string>
 
 </resources>
