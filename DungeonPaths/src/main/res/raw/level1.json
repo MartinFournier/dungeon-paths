@@ -30,11 +30,11 @@
             text : "The dust seemed fairly harmless ...",
             actions : [
                 {
-                    text : "Eat some more of that tasty dirt"
+                    text : "Eat some more of that tasty dirt",
                     goto : [2]
                 },
                 {
-                    text : "Go back"
+                    text : "Go back",
                     goto : [1]
                 }
             ]

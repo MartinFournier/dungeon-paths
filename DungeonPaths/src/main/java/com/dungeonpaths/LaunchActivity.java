@@ -16,8 +16,6 @@ public class LaunchActivity extends Activity {
         super.onCreate(savedInstanceState);
        // this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.launch_main);
-        Level level = Level.getLevel(getResources(), R.raw.level1);
-        int i = 1;
     }
 
 
