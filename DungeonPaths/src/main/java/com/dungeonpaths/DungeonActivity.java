@@ -42,6 +42,7 @@ public class DungeonActivity extends Activity {
         if (level.isVictory()){
             Intent intent = new Intent(this, WinningActivity.class);
             startActivity(intent);
+            return;
         }
 
         if (levelButtons != null) {
