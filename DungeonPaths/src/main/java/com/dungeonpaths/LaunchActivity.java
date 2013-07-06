@@ -3,6 +3,7 @@ package com.dungeonpaths;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
@@ -15,6 +16,8 @@ public class LaunchActivity extends Activity {
         super.onCreate(savedInstanceState);
        // this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.launch_main);
+        Level level = Level.getLevel(getResources(), R.raw.level1);
+        int i = 1;
     }
 
 

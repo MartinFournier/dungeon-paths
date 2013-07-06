@@ -1,0 +1,90 @@
+{
+    "name" : "The Lair of The Evil Cats",
+    "first_event" : 1,
+    "victory_events" : [8],
+    "events": [
+        {
+            id : 1,
+            text : "You are in a creepy, dusty room. You see a door to your right, and a cat-looking statue in the corner.",
+            actions : [
+                {
+                    text : "Eat dirt off the floor",
+                    goto : [2, 3]
+                },
+                {
+                    text : "Open the door", 
+                    goto : [4, 5]
+                },
+                {
+                    text : "Investigate the statue",
+                    goto : [6]
+                }
+            ]
+        },
+        {
+            id : 2,
+            text : "The dust contained toxins. You died."
+        },
+        {
+            id: 3,
+            text : "The dust seemed fairly harmless ...",
+            actions : [
+                {
+                    text : "Eat some more of that tasty dirt"
+                    goto : [2]
+                },
+                {
+                    text : "Go back"
+                    goto : [1]
+                }
+            ]
+        },
+        {
+            id : 4,
+            text : "The door is locked.",
+            actions : [
+                {
+                    text : "Go back",
+                    goto : [1]
+                }
+            ]
+        },
+        {
+            id : 5,
+            text : "Congratulations! You managed to open the door. Oh, there is nothing behind it.",
+            actions : [
+                {
+                    text : "Go back"
+                }
+            ]
+        },
+        {
+            id : 6,
+            text : "The statue is pretty damn sweet. It's golden and even has fairy wings attached to its back.",
+            actions : [
+                {
+                    text : "Pet the cat",
+                    goto: [7]
+                },
+                {
+                    text : "Smash it down with your club",
+                    goto: [8]
+                }
+            ]
+        },
+        {
+            id : 7,
+            text : "It purrs a bit.",
+            actions : [
+                {
+                    text : "Go back",
+                    goto: [6]
+                }
+            ]
+        },
+        {
+            id : 8,
+            text : "Yay, you killed that stupid cat. You won. Woohoo."
+        } 
+    ]
+}
