@@ -24,4 +24,9 @@ public class Event {
     public Action[] getActions() {
         return actions;
     }
+
+    private ItemReward item;
+    public ItemReward getItem(){
+        return item;
+    }
 }

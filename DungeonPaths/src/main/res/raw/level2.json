@@ -1,5 +1,5 @@
 {
-    "name" : "The Lair of The Evil Cats",
+    "name" : "ANOTHER DUNGEON WOOOO",
     "first_event" : 1,
     "victory_events" : [8],
     "events": [
@@ -82,12 +82,7 @@
         {
             id : 7,
             text : "It purrs a bit.",
-			place : "Creepy Room (lol)",
-			item: {
-				id: 1,
-				text: "You win a bunch of gold pieces! (to be exact, 100!)",
-				qty: 100
-			},
+			place : "Creepy Room",
             actions : [
                 {
                     text : "Go back",
@@ -101,5 +96,4 @@
 			place : "Creepy Room"
         } 
     ]
-
 }

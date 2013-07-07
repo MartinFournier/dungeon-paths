@@ -74,10 +74,18 @@ public class LaunchActivity extends Activity {
     public void createHero(View view) {
         EditText text = (EditText) findViewById(R.id.hero_name);
         String heroName = text.getText().toString();
+        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        int index= spinner.getSelectedItemPosition();
+        String selectedLevelFile = levels[index].getFile();
+        int fileId = Utils.getResourceIdentifier(getResources(), getPackageName(), selectedLevelFile);
+
         Hero hero = new Hero(heroName);
         Global.setHero(hero);
-        Intent intent = new Intent(this, DungeonActivity.class);
 
+        Global.setItems(Item.getItems(getResources()));
+
+        Intent intent = new Intent(this, DungeonActivity.class);
+        intent.putExtra("FILE_ID", fileId);
         startActivity(intent);
     }
 }

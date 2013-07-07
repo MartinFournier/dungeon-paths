@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,9 @@ public class DungeonActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dungeon_main);
-        this.level = Level.getLevel(getResources(), R.raw.level1);
+
+        int levelId = (int) getIntent().getIntExtra("FILE_ID", 0);
+        this.level = Level.getLevel(getResources(), levelId);
         actionBar = getActionBar();
         actionBar.setTitle(Global.getHero().getName() + " in '" + level.getName() +  "'");
         showCurrentEvent();
@@ -68,6 +71,15 @@ public class DungeonActivity extends Activity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(0, 0, 0, 20);
+
+        ItemReward item = currentEvent.getItem();
+        TextView itemView = (TextView)findViewById(R.id.item_text);
+        if (item != null){
+            itemView.setText(item.getText());
+            itemView.setVisibility(View.VISIBLE);
+        }else{
+            itemView.setVisibility(View.GONE);
+        }
 
         ArrayList<Button> buttons = new ArrayList<Button>();
 
