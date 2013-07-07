@@ -10,6 +10,11 @@ import com.google.gson.GsonBuilder;
  */
 public class Item {
     private int id;
+
+    public int getId() {
+        return id;
+    }
+
     private String level;
 
     public static Item[] getItems(Resources resources) {

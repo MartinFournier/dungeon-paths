@@ -29,4 +29,15 @@ public class Event {
     public ItemReward getItem(){
         return item;
     }
+
+    public Item getActualItem(int itemId) {
+        Item i = null;
+        for (Item item : Global.getItems()){
+            if (item.getId() == itemId){
+                return item;
+            }
+        }
+        return null;
+    }
+
 }

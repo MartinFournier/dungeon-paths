@@ -1,5 +1,7 @@
 package com.dungeonpaths;
 
+import java.util.ArrayList;
+
 /**
  * Created by fourn_000 on 06/07/13.
  */
@@ -20,5 +22,9 @@ public class Global {
     }
     public static Item[] getItems(){
         return items;
+    }
+
+    public static void receiveItem(ItemReward item) {
+        Global.receiveItem(item);
     }
 }

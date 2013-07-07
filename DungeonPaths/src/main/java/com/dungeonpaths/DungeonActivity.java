@@ -77,6 +77,7 @@ public class DungeonActivity extends Activity {
         if (item != null){
             itemView.setText(item.getText());
             itemView.setVisibility(View.VISIBLE);
+            Global.receiveItem(item);
         }else{
             itemView.setVisibility(View.GONE);
         }
