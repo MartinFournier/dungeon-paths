@@ -1,0 +1,10 @@
+[
+    {
+        name : "The Lair of the Evil Cats",
+        file : "level1.json"
+    },
+    {
+        name : "The Return of the Cat Monster",
+        file : "level2.json"
+    }
+]

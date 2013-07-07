@@ -15,6 +15,11 @@ import java.io.Writer;
  * Created by fourn_000 on 06/07/13.
  */
 public class Utils {
+    public static int getResourceIdentifier(Resources resources, String packageName, String file) {
+        int identifier = resources.getIdentifier(file, "raw", packageName);
+        return identifier;
+    }
+
     public static String getJsonString(Resources resources, int file){
         InputStream is = resources.openRawResource(file);
         Writer writer = new StringWriter();
