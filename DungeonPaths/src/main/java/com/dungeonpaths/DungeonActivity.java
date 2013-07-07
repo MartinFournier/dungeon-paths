@@ -17,19 +17,19 @@ import java.util.List;
 public class DungeonActivity extends Activity {
     private Level level;
     private ArrayList<Button> levelButtons;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dungeon_main);
         this.level = Level.getLevel(getResources(), R.raw.level1);
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(Global.getHero().getName());
-        actionBar.setSubtitle(level.getName());
+        actionBar = getActionBar();
+        actionBar.setTitle(Global.getHero().getName() + " in '" + level.getName() +  "'");
         showCurrentEvent();
     }
 
-    View.OnClickListener getOnClickChangeEvent(final int eventId)  {
+    View.OnClickListener getOnClickChangeEvent(final int eventId) {
         return new View.OnClickListener() {
             public void onClick(View v) {
                 level.setEventById(eventId);
@@ -38,24 +38,31 @@ public class DungeonActivity extends Activity {
         };
     }
 
-    private void showCurrentEvent() {
-        if (level.isVictory()){
-            Intent intent = new Intent(this, WinningActivity.class);
-            startActivity(intent);
-            return;
-        }
+    View.OnClickListener getOnClickVictory() {
+        return new View.OnClickListener() {
+            public void onClick(View v) {
+                showVictory();
+            }
+        };
+    }
 
+    private void showVictory() {
+        Intent intent = new Intent(this, WinningActivity.class);
+        startActivity(intent);
+    }
+
+    private void showCurrentEvent() {
         if (levelButtons != null) {
             for (Button button : levelButtons) {
                 ViewGroup layout = (ViewGroup) button.getParent();
-                if(null!=layout) //for safety only  as you are doing onClick
-                    layout.removeView(button);
+                if (null != layout)  layout.removeView(button);
             }
         }
 
-        TextView textView = (TextView)findViewById(R.id.main_text);
+        TextView textView = (TextView) findViewById(R.id.main_text);
         Event currentEvent = level.getCurrentEvent();
         textView.setText(currentEvent.getText());
+        actionBar.setSubtitle(currentEvent.getPlace());
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.main_layout);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
@@ -65,8 +72,8 @@ public class DungeonActivity extends Activity {
         ArrayList<Button> buttons = new ArrayList<Button>();
 
         Action[] actions = currentEvent.getActions();
-        if (actions != null){
-            for (Action action : actions){
+        if (actions != null) {
+            for (Action action : actions) {
                 Button button = new Button(this);
                 button.setText(action.getText());
                 button.setLayoutParams(params);
@@ -79,6 +86,15 @@ public class DungeonActivity extends Activity {
         }
 
         levelButtons = buttons;
+        if (level.isVictory()) {
+            Button button = new Button(this);
+            button.setText("VICTORY!");
+            button.setLayoutParams(params);
+            button.setPadding(30, 10, 30, 10);
+            button.setOnClickListener(getOnClickVictory());
+
+            layout.addView(button);
+        }
     }
 
     @Override
@@ -87,5 +103,5 @@ public class DungeonActivity extends Activity {
         getMenuInflater().inflate(R.menu.dungeon, menu);
         return true;
     }
-    
+
 }

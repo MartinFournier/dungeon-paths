@@ -25,6 +25,7 @@ public class LaunchActivity extends Activity {
         super.onCreate(savedInstanceState);
         // this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.launch_main);
+        getActionBar().hide();
         levels = BasicLevel.getBasicLevels(getResources());
         ArrayList<String> names = new ArrayList<String>();
         for (BasicLevel level  : levels) {

@@ -6,6 +6,7 @@
         {
             id : 1,
             text : "You are in a creepy, dusty room. You see a door to your right, and a cat-looking statue in the corner.",
+			place : "Creepy Room",
             actions : [
                 {
                     text : "Eat dirt off the floor",
@@ -23,11 +24,13 @@
         },
         {
             id : 2,
-            text : "The dust contained toxins. You died."
+            text : "The dust contained toxins. You died.",
+			place : "Creepy Room"
         },
         {
             id: 3,
             text : "The dust seemed fairly harmless ...",
+			place : "Creepy Room",
             actions : [
                 {
                     text : "Eat some more of that tasty dirt",
@@ -42,6 +45,7 @@
         {
             id : 4,
             text : "The door is locked.",
+			place : "Creepy Room",
             actions : [
                 {
                     text : "Go back",
@@ -52,15 +56,18 @@
         {
             id : 5,
             text : "Congratulations! You managed to open the door. Oh, there is nothing behind it.",
+			place : "Creepy Room",
             actions : [
                 {
-                    text : "Go back"
+                    text : "Go back",
+					goto : [1]
                 }
             ]
         },
         {
             id : 6,
             text : "The statue is pretty damn sweet. It's golden and even has fairy wings attached to its back.",
+			place : "Creepy Room",
             actions : [
                 {
                     text : "Pet the cat",
@@ -75,6 +82,7 @@
         {
             id : 7,
             text : "It purrs a bit.",
+			place : "Creepy Room",
             actions : [
                 {
                     text : "Go back",
@@ -84,7 +92,8 @@
         },
         {
             id : 8,
-            text : "Yay, you killed that stupid cat. You won. Woohoo."
+            text : "Yay, you killed that stupid cat. You won. Woohoo.",
+			place : "Creepy Room"
         } 
     ]
 }

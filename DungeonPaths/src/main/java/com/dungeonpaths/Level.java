@@ -12,10 +12,6 @@ public class Level {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     private String name;
 
     @SerializedName("victory_events")

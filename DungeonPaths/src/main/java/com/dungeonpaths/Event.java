@@ -15,6 +15,11 @@ public class Event {
         return text;
     }
 
+    private String place;
+    public String getPlace(){
+        return place;
+    }
+
     private Action[] actions;
     public Action[] getActions() {
         return actions;
