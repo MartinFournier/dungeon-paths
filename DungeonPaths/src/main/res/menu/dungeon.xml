@@ -6,5 +6,6 @@
     <item android:id="@+id/menu_inventory"
           android:title="Inventory"
           android:icon="@drawable/device_access_storage"
-          android:showAsAction="always|withText" />
+          android:showAsAction="always|withText"
+            android:onClick="menu_inventory"/>
 </menu>
